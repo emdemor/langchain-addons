@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langchain_addons"
+description = "Extensions to langchain"
+readme = "README.md"
+authors = [
+    { name = "Eduardo Morais", email = "emdemor415@gmail.com" }
+]
+license = { file = "LICENSE" }
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Utilities",
+]
+keywords = ["template", "app"]
+requires-python = ">=3.9"
+dynamic = ["dependencies", "version"]
+
+[tool.setuptools]
+packages = ["langchain_addons"]
+
+[tool.setuptools.dynamic]
+version = {attr = "langchain_addons.__version__"}
+dependencies = {file = ["requirements.txt"]}
